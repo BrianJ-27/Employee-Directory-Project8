@@ -1,0 +1,159 @@
+//Light Blue Top Header
+.my-header{
+  background-color: $primary-light;
+  position: relative;
+  z-index: 10;
+  box-shadow: 0 8px 6px -6px black;
+  @include mq('md'){
+    padding: 5px 5px;
+  }
+}
+.my-profile{
+  @include flex_me($just: flex-end, $vertAlign: center);
+  background-color: $primary-light;
+  padding: 5px;
+  @include mq('md'){
+    padding: 5px 5px;
+  }
+}
+// container for user picture & name
+.user-profile{
+  border-left: 1px solid $white;
+  padding-left: 7px;
+  @include flex_me($just:null);
+ 
+}
+
+// Green notification dot in where bell icon is
+.notification-circle{
+  cursor: pointer;
+  position: absolute;
+  right: 7.9em;
+  top: px-to-ems(10px);    
+  background-color: #1ACE05;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  @include mq('md'){
+    top: 13px;
+    right: 9em;
+  }
+  @include mq('lg'){
+    top: 14px;
+  }
+}
+//Hidden Notification box once user click on bell
+.notify-message-box{
+  position: fixed;
+  display: none;
+  background: $white;
+ 
+  width: 65%;
+  left: 18%;
+  top: 8%;
+  @include mq('md'){
+    top: 5.4%;
+    width: 40%;
+    left: 32%;
+  }
+  @include mq('lg'){
+    width: 40%;
+  }
+  & li {
+    @include flex_me($wrap:wrap, $just:space-between);
+    list-style-type:none ;
+    border-bottom: .2px solid $font-color-secondary;
+    padding: 10px 6px;
+    flex-basis: 100%;
+    font-size: .9em; 
+  }
+  & a{
+    color: #000;
+  }
+}
+
+#hideMe > span {
+  cursor: pointer;
+  margin-left: auto; 
+  color: $primary;
+} 
+
+.profile-username{
+  display: flex;
+  font-size: px-to-ems(12px);
+  padding-left: 5px;
+  width: px-to-ems(100px);
+  color: $white;
+  @include txt-cntrd;
+}
+
+//Dashboard Header & Header Alert box Styles//
+
+//Dashboard & Search bar Wrapper
+.main-header{
+  @include flex_me(
+       $dir: row,
+       $wrap: wrap,
+       $just: space-between
+   );
+   margin-bottom: 1em;
+} 
+// Main Dashboard Header Styles
+
+// Dark Grey Header Dashboard Styles
+.db-title{
+  flex-basis: 35%;
+  font-size: 1em;
+  padding: 1em; 
+  margin-top: 0; 
+  @include mq('md'){
+    font-size: 1.5em;
+    padding: .5em;
+  }
+  @include mq('lg'){
+    flex-basis: 30%;
+    font-size: 1.8em;
+  }
+  &:hover{
+    color: $accent-color;
+    transition: color .6s ease-out;
+  }
+}
+// container for search bar
+.search-wrapper{
+  @include flex_me($just: flex-end);
+  height: 50px;
+  background: #E8E8E8;
+  flex-basis: 65%;
+  border-radius: 3px 0 0 6px;
+  @include mq('lg'){
+    flex-basis: 70%;
+    font-size: .9em;
+  }
+}
+// Container for alert box 
+.alert-wrapper{
+  background: $primary-light;
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  color: $white;
+  padding: 4px 1em 1em 1em;
+  & strong{
+      color: $mid-night-darkness;
+      padding-right: 10px;
+  }
+  & p{
+      @include flex_me();
+      font-size: .95em;
+      padding: 5px 10px 0 5px;
+  }
+}
+
+.alert-wrapper span{
+  font-size: 2em;
+  position: absolute;
+  top: 0;
+  right: 5px;
+  cursor: pointer;
+}

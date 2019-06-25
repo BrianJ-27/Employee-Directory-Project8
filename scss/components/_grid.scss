@@ -1,0 +1,53 @@
+//Base Grid Layout for Whole site
+.grid_wrapper{
+    display: grid;
+    grid-template-columns: 100%; 
+    grid-template-rows: auto;
+    grid-template-areas:
+    "header"
+    "navigation" 
+    "main";
+    @include mq('md'){
+        display: grid;
+        grid-template-columns: 60px repeat(2, minmax(200px, auto)); 
+        grid-template-areas:
+        "header header header"
+        "navigation main main"
+        "navigation main main"
+        "navigation main main"
+        "navigation main main"
+        "navigation main main"; 
+  }    
+}
+
+//Main Content Grid Layout
+.main-grid-wrapper{
+    @include mq('md'){
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+}
+
+// Grid Area Items
+header {
+    grid-area: header;
+}
+
+nav {
+    grid-area: navigation;
+}
+
+main {
+    grid-area: main;
+    
+}
+// Make the main traffic and social media section span across 2 cols
+.traffic,
+.social{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+
+
+  

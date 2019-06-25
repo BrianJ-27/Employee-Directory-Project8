@@ -1,0 +1,29 @@
+// **************************************
+// GLOBAL VARIABLES
+// **************************************
+
+//Base Site Colors
+$white: #fff;
+$mid-night-darkness: #000;
+$primary: rgb(8, 154, 245);
+$primary-light: lighten($primary, 30%);
+$primary-dark: darken($primary, 25%);
+$accent-color: #B38F00;
+
+//Button Colors
+$primary-complementary: complement($primary);
+
+//Font Stacks
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One&display=swap');
+$font-google-primary: 'Dosis', sans-serif ;
+$font-secondary: 'Helvetica' sans-serif;
+$base-font-size: 16px;
+$font-color:  #606060;
+$font-color-secondary: #8c8c8c;
+
+// Media Query Breakpoint Map
+$breakpoints: (
+'sm': 320px,    
+'md': 768px,
+'lg': 1024px,
+);

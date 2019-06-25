@@ -1,0 +1,10 @@
+// **************************************
+//FUNCTIONS
+// **************************************
+@function px-to-ems($target, $context: $base-font-size){
+    @return ($target/$context) * 1em;
+  }
+
+  @function calc-percent($target, $container) {
+    @return ($target / $container) * 100%;
+  }

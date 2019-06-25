@@ -1,0 +1,42 @@
+// Center Images
+%centered {
+    display: block;
+    margin: 0 auto;
+  }
+
+  //rounded Images
+  %roundyImg {
+    border-radius: 50%;
+    border: 2px solid $accent-color;
+    height: px-to-ems(60px);
+  }
+
+  //Button Items only
+  %btn{
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 1em;
+  }
+
+  //Links
+  %link-love{
+    text-decoration: none;
+  }
+
+// Nav Items
+  %nav-properties{
+    list-style-type: none;
+    text-align: center;
+    border-radius: 3px;
+    padding: .5em;
+    font-size: .9em;
+  }
+// Provived Padding and curved borders for 
+  %padding {
+    padding: .5em;
+    border-radius: 5px;
+    outline: none;
+    &:focus{
+      border: 2px solid $primary;
+    }
+  }

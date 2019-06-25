@@ -1,0 +1,73 @@
+* {
+    box-sizing: border-box;
+}
+
+body,
+header,
+nav,
+section,
+div,
+ul,
+p,
+h1,
+h2,
+h3,
+form{
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    display: inline-block;
+    flex: 1;
+    font-size: px-to-ems(15px);
+    font-style: italic;
+    color: $white; 
+   }
+
+span{
+    font-size: px-to-ems(23px);  
+    padding-left: px-to-ems(3px);
+  } 
+
+h2,
+h3{
+    color: $font-color;
+    font-size: 1em;
+    text-align: center;
+    margin-top: 1em;
+}
+
+
+h3{
+    @include mq('md') {
+    text-align: left;   
+    margin-left: 1em; 
+  }  
+}
+
+section{
+    width: 100%;
+    border-bottom: 1px solid $font-color-secondary;
+    position: relative;
+    @include flex_me($dir:column, $wrap: wrap);
+    @include mq('md') {
+     @include flex_me($wrap: wrap);
+    }
+}
+
+section h3{
+    padding-bottom: 1em;
+}
+
+form{
+    width: 90%;
+    margin: 0 auto;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+

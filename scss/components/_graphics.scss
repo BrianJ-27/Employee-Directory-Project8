@@ -1,0 +1,59 @@
+/* ------------IMAGES---------------*/
+
+//small user pictures
+.my-pic,
+.circle{
+    @extend %roundyImg;
+}
+
+// style for header user profle picture
+.my-pic{
+    height: px-to-ems(35px); 
+  }
+
+//personal profile picture
+.profile-image{
+    height: px-to-ems(35px); 
+  }
+/* ------------ICONS---------------*/
+// SVG for the bell icon in top header
+.bell{
+  width: px-to-ems(20px);
+  height: px-to-ems(20px);
+  fill: #fff;
+  margin-right: 7px;
+  transition: transform .6s ease-in-out;
+  transform-origin: 50% 50%;
+}
+
+.bell:hover{
+  transform: scale(1.1) rotate(25deg);
+}
+
+
+//Search Icon
+  .search-button svg{
+    width: 17px;
+    height: 17px;
+    fill: $white;   
+  }
+//Navigation Icons 
+  .nav-wrapper svg {
+    width: px-to-ems(25px);
+    height: px-to-ems(25px);
+    margin: 7px;
+    fill: #fff;
+    &:hover{
+      fill: $accent-color;
+      transition: all .4s ease-in;
+      transform: scale(1.2);
+    }
+}
+// Social Media Icons
+.social-google > svg,
+.social-facebook > svg,
+.social-twitter > svg{
+    width: 25px;
+    height: 25px;
+    fill: #fff;
+}
