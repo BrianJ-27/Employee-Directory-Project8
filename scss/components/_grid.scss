@@ -1,31 +1,27 @@
 //Base Grid Layout for Whole site
-.grid_wrapper{
+.grid-container{
     display: grid;
     grid-template-columns: 100%; 
     grid-template-rows: auto;
     grid-template-areas:
     "header"
-    "navigation" 
     "main";
     @include mq('md'){
+        max-width: px-to-em(1000px);
+        margin: 0 auto;
+        padding: 2em;
         display: grid;
-        grid-template-columns: 60px repeat(2, minmax(200px, auto)); 
+        grid-template-columns:  repeat(3, minmax(200px, 40%)); 
+        grid-gap: 2.5em 2.5em;
+        grid-template-rows: 50% 50% 50% 50%;
         grid-template-areas:
         "header header header"
-        "navigation main main"
-        "navigation main main"
-        "navigation main main"
-        "navigation main main"
-        "navigation main main"; 
+        "main main main"
+        "main main main"
+        "main main main"
+        "main main main"
+        "main main main"; 
   }    
-}
-
-//Main Content Grid Layout
-.main-grid-wrapper{
-    @include mq('md'){
-        display: grid;
-        grid-template-columns: 50% 50%;
-    }
 }
 
 // Grid Area Items
@@ -33,20 +29,11 @@ header {
     grid-area: header;
 }
 
-nav {
-    grid-area: navigation;
-}
-
 main {
     grid-area: main;
     
 }
-// Make the main traffic and social media section span across 2 cols
-.traffic,
-.social{
-    grid-column-start: 1;
-    grid-column-end: 3;
-}
+
 
 
 
