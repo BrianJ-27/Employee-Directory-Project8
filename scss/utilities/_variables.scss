@@ -5,21 +5,21 @@
 //Base Site Colors
 $white: #fff;
 $mid-night-darkness: #000;
-$primary: rgb(8, 154, 245);
+$primary: #8C855E;
+$secondary:#8c8c8c;
 $primary-light: lighten($primary, 30%);
 $primary-dark: darken($primary, 25%);
-$accent-color: #B38F00;
+$accent-color: #D9D0A7;
 
 //Button Colors
 $primary-complementary: complement($primary);
 
 //Font Stacks
-@import url('https://fonts.googleapis.com/css?family=Fjalla+One&display=swap');
-$font-google-primary: 'Dosis', sans-serif ;
-$font-secondary: 'Helvetica' sans-serif;
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web&display=swap');
+$font-google-primary: 'Titillium Web', sans-serif;
+$font-secondary: 'Helvetica', sans-serif;
 $base-font-size: 16px;
-$font-color:  #606060;
-$font-color-secondary: #8c8c8c;
+$font-color:  #1F1E40;
 
 // Media Query Breakpoint Map
 $breakpoints: (
