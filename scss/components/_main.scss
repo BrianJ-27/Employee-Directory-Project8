@@ -10,6 +10,9 @@
 
 .text-container{
     margin-right: .5em;
+    @include mq('md'){
+        margin: 0 1em;
+    }
 }
 
 

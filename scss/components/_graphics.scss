@@ -1,10 +1,17 @@
 /* ------------IMAGES---------------*/
 .avatar{
   border-radius: 50%;
-  width: 35%;
+  width: 100px;
+  height: 100px;
   margin-left: .5em;
-  &:hover{
-    border: 2px solid $accent-color;
-    transition: border .5s ease-in;
+  border: 2px solid $accent-color;
+  @include mq('md'){
+    width: 80px;
+    height: 80px;
+    margin-left: 1em;
+  }
+  @include mq('lg'){
+    width: 90px;
+    height: 90px; 
   }
 }

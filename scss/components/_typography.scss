@@ -35,7 +35,7 @@
     @include mq('md'){
         font-size: .6em; 
        }
-    @include mq('md'){
+    @include mq('lg'){
         font-size: .85em; 
        }
 }

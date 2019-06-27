@@ -1,28 +1,25 @@
+
+
 //Base Grid Layout for Main Content
 .grid-container{
     display: grid;
     grid-template-columns: 100%; 
-    grid-template-rows: repeat(12, 14%);
+    grid-template-rows: repeat(12, minmax(150px, auto));
     grid-gap: 1.5em 1.5em;
     @include mq('md'){
         padding: 2em;
-        grid-template-columns:  repeat(3, minmax(200px, 50%)); 
-        grid-template-rows: repeat(12, 20%);
+        grid-template-columns:  repeat(3, minmax(200px, 100%)); 
+        grid-template-rows: repeat(12, minmax(20%, auto));
   } 
   @include mq('lg'){
-    grid-template-columns:  repeat(3, minmax(200px, 70%)); 
-    grid-template-rows: repeat(12, 30%);
+    grid-template-columns:  repeat(3, minmax(200px, 80%)); 
+    grid-template-rows: repeat(12, minmax(23%, 30px));
 }    
 }
 
-// Grid Area Items
-header {
-    grid-area: header;
-}
-
-main {
-    grid-area: main;
-    
+.main-wrapper{
+    max-width: 1600px;
+    margin: 0 auto; 
 }
 
 
