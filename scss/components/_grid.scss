@@ -1,8 +1,8 @@
-//Base Grid Layout for Whole site
+//Base Grid Layout for Main Content
 .grid-container{
     display: grid;
     grid-template-columns: 100%; 
-    grid-template-rows: repeat(12, 10%);
+    grid-template-rows: repeat(12, 14%);
     grid-gap: 1.5em 1.5em;
     grid-template-areas:
     "header"

@@ -9,7 +9,7 @@ $primary: #8C855E;
 $secondary:#EEEEEE;
 $primary-light: lighten($primary, 30%);
 $primary-dark: darken($primary, 25%);
-$accent-color: #D9D0A7;
+$accent-color: #1F1E40;
 
 //Button Colors
 $primary-complementary: complement($primary);
@@ -19,7 +19,7 @@ $primary-complementary: complement($primary);
 $font-google-primary: 'Titillium Web', sans-serif;
 $font-secondary: 'Helvetica', sans-serif;
 $base-font-size: 16px;
-$font-color:  #1F1E40;
+$font-color:  #737373;
 
 // Media Query Breakpoint Map
 $breakpoints: (

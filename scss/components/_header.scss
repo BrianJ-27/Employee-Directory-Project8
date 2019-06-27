@@ -1,1 +1,8 @@
-
+.title{
+    color: $accent-color;  
+    text-align: center;
+    @include mq('md'){
+        text-align: left;
+        padding-left: 1em;
+    }
+}

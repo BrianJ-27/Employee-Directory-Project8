@@ -1,5 +1,15 @@
 .card{
-    @include flex_me();
+    @include flex_me($vertAlign: center, $just: space-around);
+    border-radius: 5px;
+    border-top: 4px solid $accent-color;
+    &:hover{
+        border-top: 4px solid $primary;
+        transition: border-top .6s ease-in-out;
+    }
+}
+
+.text-container{
+    margin-right: .5em;
 }
 
 
