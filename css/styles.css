@@ -358,7 +358,6 @@ h2 {
 body {
   position: relative;
   font-family: "Titillium Web", sans-serif;
-  min-height: 100%;
   background: #EEEEEE;
 }
 
@@ -385,19 +384,20 @@ section {
 @media (min-width: 768px) {
   .grid-container {
     padding: 2em;
-    grid-template-columns: repeat(3, minmax(200px, 100%));
-    grid-template-rows: repeat(12, minmax(20%, auto));
+    grid-template-columns: repeat(2, minmax(200px, 100%));
+    grid-template-rows: repeat(12, minmax(150px, auto));
   }
 }
 @media (min-width: 1024px) {
   .grid-container {
-    grid-template-columns: repeat(3, minmax(200px, 80%));
-    grid-template-rows: repeat(12, minmax(23%, 30px));
+    grid-template-columns: repeat(3, minmax(300px, auto));
+    grid-template-rows: repeat(12, minmax(23%, 40px));
   }
 }
 
-.main-wrapper {
-  max-width: 1600px;
+.main-wrapper,
+.title {
+  max-width: 1400px;
   margin: 0 auto;
 }
 
@@ -406,20 +406,20 @@ section {
   border-radius: 50%;
   width: 100px;
   height: 100px;
-  margin-left: 0.5em;
+  margin-left: 1em;
   border: 2px solid #1F1E40;
 }
 @media (min-width: 768px) {
   .avatar {
-    width: 80px;
-    height: 80px;
     margin-left: 1em;
+    width: 105px;
+    height: 105px;
   }
 }
 @media (min-width: 1024px) {
   .avatar {
-    width: 90px;
-    height: 90px;
+    width: 110px;
+    height: 110px;
   }
 }
 
@@ -436,22 +436,25 @@ section {
 
 .card {
   display: flex;
-  justify-content: space-around;
   align-items: center;
   border-radius: 5px;
-  border-top: 4px solid #1F1E40;
+  border-top: 4px solid #8C855E;
+  border-bottom: 1px solid #1F1E40;
+  border-right: 1px solid #1F1E40;
+  border-left: 1px solid #1F1E40;
 }
 .card:hover {
-  border-top: 4px solid #8C855E;
-  transition: border-top 0.6s ease-in-out;
+  border-top: 4px solid #1F1E40;
+  transition: 0.3s ease-in-out;
+  background: #e2e0d4;
 }
 
 .text-container {
-  margin-right: 0.5em;
+  margin-left: 1em;
 }
 @media (min-width: 768px) {
   .text-container {
-    margin: 0 1em;
+    margin-left: 1.2em;
   }
 }
 
@@ -492,18 +495,28 @@ section {
   text-shadow: 1px 0px 1px #CCCCCC, 0px 1px 1px #EEEEEE, 2px 1px 1px #CCCCCC, 1px 2px 1px #EEEEEE, 3px 2px 1px #CCCCCC, 2px 3px 1px #EEEEEE, 4px 3px 1px #CCCCCC, 3px 4px 1px #EEEEEE, 5px 4px 1px #CCCCCC, 4px 5px 1px #EEEEEE, 6px 5px 1px #CCCCCC, 5px 6px 1px #EEEEEE, 7px 6px 1px #CCCCCC;
   text-transform: uppercase;
 }
+@media (min-width: 768px) {
+  .title {
+    font-size: 1.5em;
+  }
+}
+@media (min-width: 1024px) {
+  .title {
+    font-size: 2em;
+  }
+}
 
 .name {
-  font-size: 1em;
+  font-size: 0.9em;
 }
 @media (min-width: 768px) {
   .name {
-    font-size: 0.8em;
+    font-size: 1.2em;
   }
 }
 @media (min-width: 1024px) {
   .name {
-    font-size: 1.1em;
+    font-size: 1.05em;
   }
 }
 
@@ -516,7 +529,7 @@ section {
 @media (min-width: 768px) {
   .email,
 .address {
-    font-size: 0.6em;
+    font-size: 0.85em;
   }
 }
 @media (min-width: 1024px) {

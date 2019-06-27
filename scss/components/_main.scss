@@ -1,17 +1,21 @@
 .card{
-    @include flex_me($vertAlign: center, $just: space-around);
+    @include flex_me($vertAlign: center);
     border-radius: 5px;
-    border-top: 4px solid $accent-color;
+    border-top: 4px solid $primary;
+    border-bottom: 1px solid $accent-color;
+    border-right: 1px solid $accent-color;
+    border-left: 1px solid $accent-color;
     &:hover{
-        border-top: 4px solid $primary;
-        transition: border-top .6s ease-in-out;
+        border-top: 4px solid $accent-color;
+        transition: .3s ease-in-out;
+        background: $primary-light;
     }
 }
 
 .text-container{
-    margin-right: .5em;
+    margin-left: 1em;
     @include mq('md'){
-        margin: 0 1em;
+        margin-left: 1.2em;
     }
 }
 
