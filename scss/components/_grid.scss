@@ -2,26 +2,20 @@
 .grid-container{
     display: grid;
     grid-template-columns: 100%; 
-    grid-template-rows: auto;
+    grid-template-rows: repeat(12, 10%);
+    grid-gap: 1.5em 1.5em;
     grid-template-areas:
     "header"
     "main";
     @include mq('md'){
-        max-width: px-to-em(1000px);
-        margin: 0 auto;
         padding: 2em;
-        display: grid;
-        grid-template-columns:  repeat(3, minmax(200px, 40%)); 
-        grid-gap: 2.5em 2.5em;
-        grid-template-rows: 50% 50% 50% 50%;
-        grid-template-areas:
-        "header header header"
-        "main main main"
-        "main main main"
-        "main main main"
-        "main main main"
-        "main main main"; 
-  }    
+        grid-template-columns:  repeat(3, minmax(200px, 50%)); 
+        grid-template-rows: repeat(12, 20%);
+  } 
+  @include mq('lg'){
+    grid-template-columns:  repeat(3, minmax(200px, 70%)); 
+    grid-template-rows: repeat(12, 30%);
+}    
 }
 
 // Grid Area Items
