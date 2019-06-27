@@ -4,9 +4,6 @@
     grid-template-columns: 100%; 
     grid-template-rows: repeat(12, 14%);
     grid-gap: 1.5em 1.5em;
-    grid-template-areas:
-    "header"
-    "main";
     @include mq('md'){
         padding: 2em;
         grid-template-columns:  repeat(3, minmax(200px, 50%)); 

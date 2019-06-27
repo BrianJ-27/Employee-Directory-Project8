@@ -327,7 +327,8 @@ body {
 
 header {
   background: #8C855E;
-  padding: 1em; }
+  padding: 1em;
+  border-bottom: 2px ridge #1F1E40; }
 
 main {
   padding: 1.5em; }
@@ -339,8 +340,7 @@ section {
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: repeat(12, 14%);
-  grid-gap: 1.5em 1.5em;
-  grid-template-areas: "header" "main"; }
+  grid-gap: 1.5em 1.5em; }
   @media (min-width: 768px) {
     .grid-container {
       padding: 2em;
@@ -362,6 +362,9 @@ main {
   border-radius: 50%;
   width: 35%;
   margin-left: .5em; }
+  .avatar:hover {
+    border: 2px solid #1F1E40;
+    transition: border .5s ease-in; }
 
 .title {
   color: #1F1E40;

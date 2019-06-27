@@ -1,7 +1,10 @@
 /* ------------IMAGES---------------*/
-
 .avatar{
   border-radius: 50%;
   width: 35%;
   margin-left: .5em;
+  &:hover{
+    border: 2px solid $accent-color;
+    transition: border .5s ease-in;
+  }
 }
