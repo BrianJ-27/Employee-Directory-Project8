@@ -13,7 +13,7 @@
   } 
   @include mq('lg'){
     grid-template-columns:  repeat(3, minmax(300px, auto)); 
-    grid-template-rows: repeat(4, minmax(23%, 40px));
+    grid-template-rows: repeat(4, minmax(200px, auto));
 }    
 }
 
@@ -21,6 +21,7 @@
 .title{
     max-width: 1400px;
     margin: 0 auto; 
+    height: 100%;
 }
 
 
