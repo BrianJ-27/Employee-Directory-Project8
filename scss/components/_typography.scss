@@ -1,5 +1,5 @@
 .title{
-    font-size: 1.3em; 
+    font-size: 1.7em; 
     line-height: 1.5em;
     text-shadow: 1px 0px 1px #CCCCCC, 
                  0px 1px 1px #EEEEEE, 
@@ -24,12 +24,12 @@
 }
 
 .name{
-   font-size: .9em; 
+   font-size: 1.5em; 
    @include mq('md'){
-    font-size: 1.2em; 
+    font-size: 1.4em; 
    }
    @include mq('lg'){
-    font-size: 1.05em; 
+    font-size: 1.35em; 
    }
 }
 
@@ -39,9 +39,9 @@
     margin-top: .5em;
     color: $font-color;
     @include mq('md'){
-        font-size: .85em; 
+        font-size: .75em; 
        }
     @include mq('lg'){
-        font-size: .85em; 
+        font-size: .7em; 
        }
 }

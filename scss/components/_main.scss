@@ -1,5 +1,6 @@
 .card{
     height: 150px;
+    background: $white;
     @include flex_me($vertAlign: center);
     border-radius: 5px;
     border-top: 4px solid $primary;
