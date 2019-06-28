@@ -9,11 +9,11 @@
     @include mq('md'){
         padding: 2em;
         grid-template-columns:  repeat(2, minmax(200px, 100%)); 
-        grid-template-rows: repeat(12, minmax(150px, auto));
+        grid-template-rows: repeat(6, minmax(150px, auto));
   } 
   @include mq('lg'){
     grid-template-columns:  repeat(3, minmax(300px, auto)); 
-    grid-template-rows: repeat(12, minmax(23%, 40px));
+    grid-template-rows: repeat(4, minmax(23%, 40px));
 }    
 }
 
