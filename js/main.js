@@ -1,5 +1,5 @@
 // Stores the URL of the randomUser API & the options connected to the API
-const urlAPI = `https://randomuser.me/api/?results=12&inc=name, picture, email, location, phone, dob &noinfo &nat=US`
+const urlAPI = `https://randomuser.me/api/?results=12&inc=name,picture,email,location,phone,dob&noinfo&nat=US`
 
 // Stores the main element with is the main-container of all the employees
 const gridContainer = document.querySelector(".grid-container");
