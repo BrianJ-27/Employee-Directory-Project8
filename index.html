@@ -11,6 +11,9 @@
     <header>
         <h1 class="title">Amazing Startup Employee Directory</h1>
     </header>
+    <div class="search-wrapper">
+        <input type="search" id="search-field" name="user_search" placeholder="...search an employee here">
+    </div>
     <div class="main-wrapper">
          <!--Employee Directory Markup-->
         <main class="grid-container">  
@@ -19,8 +22,10 @@
         </main>
         <!--Modal Markup-->
         <div class="overlay hidden">
-            <div class="modal">
+            <div class="modal  animated bounceInUp">
                 <button class="modal-close">X</button>
+                <a href="#" class="leftPrev">&lt;</a>
+                <a href="#" class="rightNext">&gt;</a>
                 <div class="modal-info">
             <!-- modal information will be added with JS here -->
                 </div>

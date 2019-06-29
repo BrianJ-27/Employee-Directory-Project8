@@ -17,6 +17,25 @@
     margin-bottom: 1em;
   }
 
+  //Previous Arrow Scroll
+   %prev-arrow{
+    left: .5em;
+    top: 30%;
+    position: absolute;
+    font-size: 2.5em;
+    text-decoration: none;
+    color: #666666c4;
+  }
+  //Next Arrow Scroll
+   %next-arrow{
+    right: .5em;
+    top: 30%;
+    position: absolute;
+    font-size: 2.5em;
+    text-decoration: none;
+    color: #666666c4;
+  }
+   
   //Links
   %link-love{
     text-decoration: none;

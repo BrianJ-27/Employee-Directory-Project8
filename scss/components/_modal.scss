@@ -8,7 +8,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(100, 100, 100, 0.4);
+    background: rgba(100, 100, 100, 0.6);
     
 }
     
@@ -21,8 +21,20 @@
     border: 1px solid #778;       
     border-radius: 5px;
     padding: 30px 20px;
-    transition: all 5s ease-in;
 }
+
+.modal-info{
+    @include flex_me($dir:column);
+}
+
+.leftPrev{
+    @extend %prev-arrow;
+}
+
+.rightNext{
+    @extend %next-arrow;
+}
+
 .modal-close {
     position: absolute;
     right: 15px;

@@ -84,7 +84,7 @@ function showModal(index){
   let date = new Date(dob.date);
   
   const modalHTML = ` 
-  <img class="avatar" src="${picture}" />
+  <img class="modal-avatar" src="${picture}" />
   <div class="modal-text-container">
       <h2 class="name">${name.first} ${name.last}</h2>
       <p class="email">${email}</p>

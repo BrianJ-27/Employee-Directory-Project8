@@ -22,6 +22,32 @@
     }
 }
 
+.search-wrapper{
+    padding: 2em 0em 0em 2em;
+}
+
+.search-wrapper input{
+    width: 75%;
+    height: 40px;
+    border-radius: 5px;
+    outline: none;
+    @include mq('md'){
+        width: 45%;
+    }
+    @include mq('lg'){
+        width: 25%;
+    }
+}
+.search-wrapper input:focus{
+    border: $accent-color;
+}
+
+
+
+::placeholder{
+    padding-left: .5em;
+}
+
 
 
 
