@@ -8,7 +8,8 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(100, 100, 100, 0.4)
+    background: rgba(100, 100, 100, 0.4);
+    
 }
     
 .modal {
@@ -20,6 +21,7 @@
     border: 1px solid #778;       
     border-radius: 5px;
     padding: 30px 20px;
+    transition: all 5s ease-in;
 }
 .modal-close {
     position: absolute;

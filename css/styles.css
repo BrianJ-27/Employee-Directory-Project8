@@ -421,7 +421,8 @@ section {
   background: #fff;
   border: 1px solid #778;
   border-radius: 5px;
-  padding: 30px 20px; }
+  padding: 30px 20px;
+  transition: all 5s ease-in; }
 
 .modal-close {
   position: absolute;
