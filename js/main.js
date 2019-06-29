@@ -13,7 +13,7 @@ const modal = document.querySelector(".modal-info");
 // Stores the the div element that is the modal's close button
 const closeModal = document.querySelector(".modal-close");
 
-const inputValue = document.querySelector("#search-field");
+
 // Stores an empty array that will hold the values from the API
 let employees = [];
 
@@ -100,23 +100,23 @@ function showModal(index){
     modal.innerHTML = modalHTML;
 }; 
 
-function searchEmployee (index){
-  //create a variable to hold the value of the search field and change the input to lowercase
-    let inputField = document.getElementById('search-field').value.toLowerCase();
+// function searchEmployee (index){
+//   //create a variable to hold the value of the search field and change the input to lowercase
+//     let inputField = document.getElementById('search-field').value.toLowerCase();
  
-     let employee = employees[index];
-     let name = employee.name;
+//      let employee = employees[index];
+//      let name = employee.name;
 
-     name.forEach(fEmployee =>{
-      let filteredEmployee = fEmployee.getAttribute("data-index").toLowerCase();
-      let match = filteredEmployee.includes(inputField);
-      if (match){
-        filteredEmployee.style.display = "";
-       }else{
-        filteredEmployee.style.display = "none";
-       }
-     })   
-   }
+//      name.forEach(fEmployee =>{
+//       let filteredEmployee = fEmployee.getAttribute("data-index").toLowerCase();
+//       let match = filteredEmployee.includes(inputField);
+//       if (match){
+//         filteredEmployee.style.display = "";
+//        }else{
+//         filteredEmployee.style.display = "none";
+//        }
+//      })   
+//    }
 
   // ------------------------------------------
   //  EVENT LISTENERS
@@ -134,8 +134,21 @@ function searchEmployee (index){
     overlay.classList.add("hidden");
   });
 
-  inputValue.addEventListener("keyup", ()=> {
-    searchEmployee(index);
+  const searchBar = document.forms["searchBar"].querySelector("input");
+
+  searchBar.addEventListener("keyup", (event)=> {
+    if(event.target.value){
+      const searchEmployees = event.target.value.toLowerCase();
+      const cards = document.getElementsByTagName("section");
+      employees.forEach( employee => {
+        let name = employees.textContent;
+        if(name.toLowerCase() !== -1){
+          cards.style.display = "block";
+        } else{
+          cards.style.display = "none";
+        }
+      })
+    }   
   });
 
 
