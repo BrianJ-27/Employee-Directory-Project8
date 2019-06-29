@@ -382,6 +382,7 @@ section {
 
 .card {
   height: 150px;
+  cursor: pointer;
   background: #fff;
   display: flex;
   align-items: center;
@@ -450,17 +451,23 @@ section {
       font-size: 1.35em; } }
 
 .email,
-.address {
+.address,
+.phone,
+.bday {
   font-size: .8em;
   margin-top: .5em;
   color: #737373; }
   @media (min-width: 768px) {
     .email,
-    .address {
+    .address,
+    .phone,
+    .bday {
       font-size: .75em; } }
   @media (min-width: 1024px) {
     .email,
-    .address {
+    .address,
+    .phone,
+    .bday {
       font-size: .7em; } }
 
 /*# sourceMappingURL=styles.css.map */
