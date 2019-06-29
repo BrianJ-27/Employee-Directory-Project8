@@ -102,7 +102,7 @@ function showModal (employeeIndex){
 
   gridContainer.addEventListener("click", (event) =>{
     if(event.target !== gridContainer){
-      const card = e.target.closest(".card");
+      const card = event.target.closest(".card");
       const index = card.getAttribute('data-index');
       showModal(employeeIndex);
     }
