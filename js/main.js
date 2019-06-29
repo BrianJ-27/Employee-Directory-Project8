@@ -13,7 +13,7 @@ const modal = document.querySelector(".modal-info");
 // Stores the the div element that is the modal's close button
 const closeModal = document.querySelector(".modal-close");
 // Stores an empty array that will hold the values from the API
-const employees = [];
+let employees = [];
 
 
 // ------------------------------------------
@@ -37,7 +37,7 @@ function fetchData(url){
 
   function displayEmployees (employeeData) {
     // we are storing the 12 employee data into the empty array
-   let employees = employeeData;
+   employees = employeeData;
    // storing an empty string into a variable so we can dynamically interpolate the HTML to it
    let employeeHTML = " ";
    //We are itering or looping over the 12 employees data array, 
@@ -67,23 +67,23 @@ function fetchData(url){
    
 }
 
-function showModal (employeeIndex){
-  let modalContact = employees[employeeIndex]; 
+function showModal(index){
+   employee = employees[index]; 
 
-  let name = modalContact.name;
-  let dob = modalContact.dob;
-  let phone = modalContact.phone;
-  let email = modalContact.email;
-  let city = modalContact.location.city;
-  let street = modalContact.location.street;
-  let state = modalContact.location.state;
-  let postcode = modalContact.location.postcode;
-  let picture = modalContact.picture.large;
+  let name = employee.name;
+  let dob = employee.dob;
+  let phone = employee.phone;
+  let email = employee.email;
+  let city = employee.location.city;
+  let street = employee.location.street;
+  let state = employee.location.state;
+  let postcode = employee.location.postcode;
+  let picture = employee.picture.large;
   let date = new Date(dob.date);
   
   const modalHTML = ` 
   <img class="avatar" src="${picture}" />
-  <div class="text-container">
+  <div class="modal-text-container">
       <h2 class="name">${name.first} ${name.last}</h2>
       <p class="email">${email}</p>
       <p class="address">${city}</p>
@@ -92,7 +92,7 @@ function showModal (employeeIndex){
       <p class="address">${street} ${state} ${postcode}</p>
       <p>Birthday:${date.getMonth()}/${date.getDate()}/${date.getFullYear()}</p>
     `
-    overlay.className = "hidden";
+    overlay.classList.remove("hidden");
     modal.innerHTML = modalHTML;
 }; 
 
@@ -104,7 +104,11 @@ function showModal (employeeIndex){
     if(event.target !== gridContainer){
       const card = event.target.closest(".card");
       const index = card.getAttribute('data-index');
-      showModal(employeeIndex);
+      showModal(index);
     }
+  });
+
+  closeModal.addEventListener("click", ()=>{
+    overlay.classList.add("hidden");
   });
 
