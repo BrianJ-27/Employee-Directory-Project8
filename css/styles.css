@@ -2866,9 +2866,15 @@ section {
   height: 40px;
   border-radius: 5px;
   outline: none; }
+  @media (min-width: 768px) {
+    .search-wrapper input {
+      width: 45%; } }
+  @media (min-width: 1024px) {
+    .search-wrapper input {
+      width: 25%; } }
 
 .search-wrapper input:focus {
-  border: #1F1E40; }
+  border: 1px solid #1F1E40; }
 
 ::placeholder {
   padding-left: .5em; }
@@ -2902,7 +2908,10 @@ section {
   position: absolute;
   right: 15px;
   top: 5px;
-  cursor: pointer; }
+  cursor: pointer;
+  background: #e2e0d4;
+  color: #1F1E40;
+  outline: none; }
 
 .title {
   font-size: 1.7em;

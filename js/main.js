@@ -12,6 +12,8 @@ const overlay = document.querySelector(".overlay");
 const modal = document.querySelector(".modal-info");
 // Stores the the div element that is the modal's close button
 const closeModal = document.querySelector(".modal-close");
+
+const inputValue = document.querySelector("#search-field");
 // Stores an empty array that will hold the values from the API
 let employees = [];
 
@@ -98,7 +100,23 @@ function showModal(index){
     modal.innerHTML = modalHTML;
 }; 
 
+function searchEmployee (index){
+  //create a variable to hold the value of the search field and change the input to lowercase
+    let inputField = document.getElementById('search-field').value.toLowerCase();
+ 
+     let employee = employees[index];
+     let name = employee.name;
 
+     name.forEach(fEmployee =>{
+      let filteredEmployee = fEmployee.getAttribute("data-index").toLowerCase();
+      let match = filteredEmployee.includes(inputField);
+      if (match){
+        filteredEmployee.style.display = "";
+       }else{
+        filteredEmployee.style.display = "none";
+       }
+     })   
+   }
 
   // ------------------------------------------
   //  EVENT LISTENERS
@@ -115,4 +133,10 @@ function showModal(index){
   closeModal.addEventListener("click", ()=>{
     overlay.classList.add("hidden");
   });
+
+  inputValue.addEventListener("keyup", ()=> {
+    searchEmployee(index);
+  });
+
+
 
