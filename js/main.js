@@ -31,6 +31,7 @@ function fetchData(url){
     .then(res => res.results)
     .then(displayEmployees)
   
+    console.log(fetchData(urlAPI))
   // ------------------------------------------
   //  HELPER FUNCTIONS
   // ------------------------------------------
@@ -67,6 +68,7 @@ function fetchData(url){
    
 }
 
+
 function showModal(index){
    employee = employees[index]; 
 
@@ -90,11 +92,13 @@ function showModal(index){
       <hr />
       <p class="phone">${phone}</p>
       <p class="address">${street} ${state} ${postcode}</p>
-      <p class= "bday">Birthday:${date.getMonth()}/${date.getDate()}/${date.getFullYear()}</p>
+      <p class= "bday">Birthday: ${date.getMonth()}/${date.getDate()}/${date.getFullYear()}</p>
     `
     overlay.classList.remove("hidden");
     modal.innerHTML = modalHTML;
 }; 
+
+
 
   // ------------------------------------------
   //  EVENT LISTENERS
