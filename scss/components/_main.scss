@@ -22,11 +22,13 @@
     }
 }
 
-.search-wrapper{
+#searchBar{
     padding: 2em 0em 0em 2em;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.search-wrapper input{
+#searchBar input{
     width: 75%;
     height: 40px;
     border-radius: 5px;
@@ -38,7 +40,7 @@
         width: 25%;
     }
 }
-.search-wrapper input:focus{
+#searchBar input:focus{
     border: 1px solid $accent-color;
 }
 

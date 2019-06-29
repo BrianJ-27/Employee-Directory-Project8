@@ -2858,22 +2858,24 @@ section {
     .text-container {
       margin-left: 1.2em; } }
 
-.search-wrapper {
-  padding: 2em 0em 0em 2em; }
+#searchBar {
+  padding: 2em 0em 0em 2em;
+  max-width: 1200px;
+  margin: 0 auto; }
 
-.search-wrapper input {
+#searchBar input {
   width: 75%;
   height: 40px;
   border-radius: 5px;
   outline: none; }
   @media (min-width: 768px) {
-    .search-wrapper input {
+    #searchBar input {
       width: 45%; } }
   @media (min-width: 1024px) {
-    .search-wrapper input {
+    #searchBar input {
       width: 25%; } }
 
-.search-wrapper input:focus {
+#searchBar input:focus {
   border: 1px solid #1F1E40; }
 
 ::placeholder {
