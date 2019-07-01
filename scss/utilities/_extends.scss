@@ -21,6 +21,7 @@
    %prev-arrow{
     left: .5em;
     top: 30%;
+    cursor: pointer;
     position: absolute;
     font-size: 2.5em;
     text-decoration: none;
@@ -30,6 +31,7 @@
    %next-arrow{
     right: .5em;
     top: 30%;
+    cursor: pointer;
     position: absolute;
     font-size: 2.5em;
     text-decoration: none;
