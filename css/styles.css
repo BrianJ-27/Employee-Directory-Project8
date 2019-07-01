@@ -2908,6 +2908,7 @@ section {
 
 .modal-close {
   position: absolute;
+  border-radius: 0 0 0 35%;
   padding: 10px;
   right: 0px;
   top: 0px;
