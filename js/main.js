@@ -39,7 +39,7 @@ function fetchData(url){
       console.log(results);
       employees = results;
     })
-    .then(searchEmployee)
+    .then(filterEmployee)
    
 
     
@@ -113,7 +113,7 @@ function showModal(index){
 
     
 
-function searchEmployee(){
+function filterEmployee(){
     filteredEmployees = employees;
   //create a variable to hold the value of the search field and change the input to lowercase
     let inputField = document.getElementById('search-field').value.toLowerCase();
@@ -173,7 +173,7 @@ function searchEmployee(){
 
   const searchBar = document.getElementById("searchBar");
   
-  searchBar.addEventListener("keyup", searchEmployee);
+  searchBar.addEventListener("keyup", filterEmployee);
   
 
 
