@@ -48,13 +48,10 @@ function fetchData(url){
       employees = results;
     })
     .then(filterEmployee)
-   
-
     
 // --------------------------------------------------------------------//
 //  HELPER FUNCTIONS
 // --------------------------------------------------------------------//
-
 
 //This function adds the employees onto the page
   function displayEmployees (employeeData) {
@@ -94,11 +91,12 @@ function fetchData(url){
 // 1) grid container listener invokes this function when the user click any employee card on the page
 /* 2) The left & right arrow click listeners calls this function when a user clicks on the arrows to
      go back & forth to show the previous & next modal employee card.
-   */
+*/
+
 function showModal(index){
 /*takes the filtered JSON data and sets it to the the local employee variable. Then, I created 
   multiple variables to hold the values of the JSON data using dot notation.
-   */
+*/
    employee = filteredEmployees[index]; 
   let name = employee.name;
   let dob = employee.dob;
@@ -134,6 +132,7 @@ function showModal(index){
 /*This function is passed into the last then() method to execute the code below that will filter the empolyee
 data and display to the page */
 function filterEmployee(){
+  
   /*places the "employee" JSON data received from the server and stores the data into a the 
     "filteredEmployees" varaible This filteredEmployees will now hold the data in a array*/
     filteredEmployees = employees;
