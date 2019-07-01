@@ -13,6 +13,10 @@ const modal = document.querySelector(".modal-info");
 // Stores the the div element that is the modal's close button
 const closeModal = document.querySelector(".modal-close");
 
+const leftArrow = document.getElementById("leftArrow");
+const rightArrow = document.getElementById("rightArrow");
+
+let filteredEmployees = [];
 
 // Stores an empty array that will hold the values from the API
 let employees = [];
@@ -30,23 +34,29 @@ function fetchData(url){
   
   //invoking the fetch function
     fetchData(urlAPI)
-    .then(res => res.results)
-    .then(displayEmployees)
-  
-    console.log(fetchData(urlAPI))
+    .then(res => {
+      const results = res.results;
+      console.log(results);
+      employees = results;
+    })
+    .then(searchEmployee)
+   
+
+    
   // ------------------------------------------
   //  HELPER FUNCTIONS
   // ------------------------------------------
 
-  function displayEmployees (employeeData) {
-    // we are storing the 12 employee data into the empty array
-   employees = employeeData;
+
+
+  function displayEmployees (employeeData ) {
+    
    // storing an empty string into a variable so we can dynamically interpolate the HTML to it
    let employeeHTML = " ";
    //We are itering or looping over the 12 employees data array, 
    //using dot.notation to access the values inside the array and assign it to a variable
    //Then create the HTML tags and use string interpolation to access the and set the values to an attribute
-   employees.forEach((employee, index) =>{
+   employeeData.forEach((employee, index) =>{
         let name = employee.name;
         let email = employee.email;
         let city = employee.location.city;
@@ -72,7 +82,7 @@ function fetchData(url){
 
 
 function showModal(index){
-   employee = employees[index]; 
+   employee = filteredEmployees[index]; 
 
   let name = employee.name;
   let dob = employee.dob;
@@ -88,7 +98,7 @@ function showModal(index){
   const modalHTML = ` 
   <img class="modal-avatar" src="${picture}" />
   <div class="modal-text-container">
-      <h2 class="name">${name.first} ${name.last}</h2>
+      <h2 id= "modalCard" class="name" data-index="${index}" >${name.first} ${name.last}</h2>
       <p class="email">${email}</p>
       <p class="address">${city}</p>
       <hr />
@@ -98,26 +108,29 @@ function showModal(index){
     `
     overlay.classList.remove("hidden");
     modal.innerHTML = modalHTML;
+    
 }; 
 
-// function searchEmployee (index){
-//   //create a variable to hold the value of the search field and change the input to lowercase
-//     let inputField = document.getElementById('search-field').value.toLowerCase();
- 
-//      let employee = employees[index];
-//      let name = employee.name;
+    
 
-//      name.forEach(fEmployee =>{
-//       let filteredEmployee = fEmployee.getAttribute("data-index").toLowerCase();
-//       let match = filteredEmployee.includes(inputField);
-//       if (match){
-//         filteredEmployee.style.display = "";
-//        }else{
-//         filteredEmployee.style.display = "none";
-//        }
-//      })   
-//    }
+function searchEmployee(){
+    filteredEmployees = employees;
+  //create a variable to hold the value of the search field and change the input to lowercase
+    let inputField = document.getElementById('search-field').value.toLowerCase();
+    if (inputField && inputField.length){
+     filteredEmployees = filteredEmployees.filter((employee)=> employee.name.first.indexOf(inputField) > -1 || employee.name.last.indexOf(inputField) > -1);
+    }
+     displayEmployees(filteredEmployees); 
+  }
 
+  function getModalCard(){
+    return document.getElementById("modalCard");
+  }
+
+  function getCurrentIndex(modalCard){
+    return modalCard.getAttribute('data-index');
+  }
+  
   // ------------------------------------------
   //  EVENT LISTENERS
   // ------------------------------------------
@@ -130,26 +143,37 @@ function showModal(index){
     }
   });
 
+  leftArrow.addEventListener("click", (event)=>{
+    let card = getModalCard();
+    let currentIndex = +getCurrentIndex(card);
+     currentIndex -=1;
+     if(currentIndex < 0){
+        currentIndex = filteredEmployees.length -1;
+     }
+     card.setAttribute('data-index', currentIndex)
+     showModal(currentIndex);
+  });
+
+  rightArrow.addEventListener("click", (event)=>{
+    let card = getModalCard();
+    let currentIndex = +getCurrentIndex(card);
+     currentIndex +=1;
+     if(currentIndex >= filteredEmployees.length){
+        currentIndex = 0;
+     }
+     card.setAttribute('data-index', currentIndex)
+     showModal(currentIndex);
+  });
+
   closeModal.addEventListener("click", ()=>{
     overlay.classList.add("hidden");
   });
 
-  const searchBar = document.forms["searchBar"].querySelector("input");
+  
 
-  searchBar.addEventListener("keyup", (event)=> {
-    if(event.target.value){
-      const searchEmployees = event.target.value.toLowerCase();
-      const cards = document.getElementsByTagName("section");
-      employees.forEach( employee => {
-        let name = employees.textContent;
-        if(name.toLowerCase() !== -1){
-          cards.style.display = "block";
-        } else{
-          cards.style.display = "none";
-        }
-      })
-    }   
-  });
-
+  const searchBar = document.getElementById("searchBar");
+  
+  searchBar.addEventListener("keyup", searchEmployee);
+  
 
 
