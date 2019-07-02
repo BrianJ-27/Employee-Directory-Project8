@@ -1,5 +1,5 @@
 .title{
-    font-size: 1.7em; 
+    font-size: 1.5em; 
     line-height: 1.5em;
     text-shadow: 1px 0px 1px #CCCCCC, 
                  0px 1px 1px #EEEEEE, 
@@ -15,8 +15,9 @@
                  5px 6px 1px #EEEEEE, 
                  7px 6px 1px #CCCCCC;
     text-transform: uppercase;
+    text-align: center;
     @include mq('md'){
-        font-size: 1.5em; 
+        font-size: 1.7em; 
        }
     @include mq('lg'){
         font-size: 2em; 
