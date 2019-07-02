@@ -82,7 +82,7 @@ function fetchData(url){
 
    /*Then we are taking our new dynamic content and assigning to gridContainer variable.
     Then we are adding the .innerHTML() to the grid container variable to add it dynamically to the page !! :)
-    We then call this function in our then() so the code inside this function can execute */
+    Then we invoke this function inside our filterEmployee function so the code inside this function can execute */
    gridContainer.innerHTML = employeeHTML;
    
 }
@@ -124,7 +124,7 @@ function showModal(index){
     //Remove the hidden class on the this selector to reveal the dark transparent overlay
     overlay.classList.remove("hidden");
 
-    //Then assign the value of modalHTML so the all the HTML markup gets added to the DOM after user clicks  
+    //Then assigns the value of modalHTML so the all the HTML markup gets added to the DOM after user clicks  
     modal.innerHTML = modalHTML;
     
 }; 
@@ -141,13 +141,13 @@ function filterEmployee(){
     let inputField = document.getElementById('search-field').value.toLowerCase();
 
   /* checks to see if input value and arraylength are true. If true, it filters out the
-     first names or last namesof what is typed */
+     first names or last names of what is typed */
     if (inputField && inputField.length){
      filteredEmployees = filteredEmployees.filter((employee)=> 
      employee.name.first.indexOf(inputField) > -1 || employee.name.last.indexOf(inputField) > -1);
     }
 
-  /* If the "if statement" evaluates to false, then invoke the displayEmployees function and 
+  /* If the "if statement" evaluates to false, then JS will invoke the displayEmployees function and 
      pass the stored JSON data to begin execution of the displayEmployees function To display 
      this employee data to the page. */
      displayEmployees(filteredEmployees); 
@@ -170,8 +170,8 @@ function filterEmployee(){
 // --------------------------------------------------------------------//
 
 /* when user clicks on an employee card, it grabs the the closet employee card and grabs the 
-   number value from the listener also passes a the indexed number value to the showModal 
-   function */
+   number value from the listener also passes the indexed number value to the showModal 
+   function  doing these steps will reveal our overlay and open up our pop-up modal*/
   gridContainer.addEventListener("click", (event) =>{
     if(event.target !== gridContainer){
       const card = event.target.closest(".card");
@@ -206,13 +206,13 @@ function filterEmployee(){
      showModal(currentIndex);
   });
 
-// when user clicks the close button it hides the modal/closes the modal compeletly
+// when user clicks the close button on the modal card it closes the modal compeletly
   closeModal.addEventListener("click", ()=>{
     overlay.classList.add("hidden");
   });
 
-/* When user keys in a value (letter) it filters through the employees and display 
-   the employees that have with that value in their first & last name */
+/* When a user keys in a value (letter) it filters through the employees and display 
+   the employees that have the matching value in their first or last name */
   const searchBar = document.getElementById("searchBar");
   searchBar.addEventListener("keyup", filterEmployee);
   
