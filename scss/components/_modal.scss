@@ -27,6 +27,10 @@
     @include flex_me($dir:column);
 }
 
+.modal-avatar{
+    width: 40%;
+}
+
 .leftPrev{
     @extend %prev-arrow;
 }
@@ -37,7 +41,6 @@
 
 .modal-close {
     position: absolute;
-    border-radius:  0 0 0 35%;
     padding: 10px;
     right: 0px;
     top: 0px;
