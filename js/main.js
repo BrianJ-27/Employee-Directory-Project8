@@ -34,7 +34,7 @@ let employees = [];
 //  FETCH FUNCTIONS
 // --------------------------------------------------------------------//
 
-function fetchData(url){
+async function fetchData(url){
     return fetch(url)
       .then(res => res.json())
       .catch(error => console.log('Please check your code. Something is not right.', error))
