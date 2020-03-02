@@ -1,8 +1,10 @@
- class RandomUserAPI{
- 
+ export default class RandomUserAPI{
+    constructor(){
+      this.url = `https://randomuser.me/api/?results=12&inc=name,picture,email,location,phone,dob&noinfo&nat=US`;
+    }
   // Fetch Random User JSON object from API
-  async getRandomUser(url){
-    const response = await fetch (url);
+  async getRandomUser(){
+    const response = await fetch (this.url);
     const responseData = await response.json();
     return responseData;
   }

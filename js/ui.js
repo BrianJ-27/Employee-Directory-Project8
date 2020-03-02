@@ -1,4 +1,4 @@
- class UI{
+ export default class UI{
   constructor(){
     // Stores the main element with is the main-container of all the employees
     this.gridContainer = document.querySelector(".grid-container");
@@ -83,17 +83,15 @@
 
   // filters employee data, then evals to "true" and 
   //passes it into the "displayEmployee" func
-  filterEmployee(){
-    filteredEmployees = employees; // holds the array employees data
+  filterEmployee(employees){
+    let filteredEmployees = employees.results; // holds the array employees data
     let inputField = document.getElementById('search-field').value.toLowerCase();
     if (inputField && inputField.length){
       filteredEmployees = filteredEmployees.filter((employee)=> 
       employee.name.first.indexOf(inputField) > -1 && employee.name.last.indexOf(inputField) > -1);
     }
-    ui.displayEmployees(filteredEmployees);
+   ui.displayEmployees(filteredEmployees);
   }
-
-  
 
   // will dispay the modal that is clicked on
   showModal(index){
