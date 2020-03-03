@@ -11,16 +11,8 @@
 //  IMPORT CLASSES FROM RANDOMUSER.JS AND UI.JS
 // --------------------------------------------------------------------//
 // Our modules / classes
-import RandomUserAPI from './randomUser.js';
-import UI from './ui.js';
-
-// --------------------------------------------------------------------//
-//  INIT CLASSES FROM RANDOMUSER.JS AND UI.JS
-// --------------------------------------------------------------------//
-
-// Init Classes in this file
-const ui = new UI();
-const randomUser = new RandomUserAPI();
+import { randomUser } from './randomUser.js';
+import { ui}  from './ui.js';
 
 // Fetch data from API, then pass API array to "filter employee" function
   randomUser.getRandomUser()

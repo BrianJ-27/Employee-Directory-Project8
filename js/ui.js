@@ -1,4 +1,4 @@
- export default class UI{
+class UI{
   constructor(){
     // Stores the main element with is the main-container of all the employees
     this.gridContainer = document.querySelector(".grid-container");
@@ -14,6 +14,9 @@
     this.rightArrow = document.getElementById("rightArrow");
     //stores the form element that holds the input field
     this.searchBar = document.getElementById("searchBar");
+    //hold employee array data
+    this.employees;
+    // fires all event listeners
     this.events();
   }
 
@@ -60,8 +63,9 @@
 
   // display employee data to the page
   displayEmployees(employeeData){
+    const myArray = employeeData;
     let employeeHTML = " "; 
-    employeeData.forEach((employee, index) =>{
+    myArray.forEach((employee, index) =>{
         let name = employee.name;
         let email = employee.email;
         let city = employee.location.city;
@@ -76,11 +80,9 @@
             </div>
         </section>
          `;
-   }
-   ); 
-   this.gridContainer.innerHTML = employeeHTML;
-  }
-
+  });
+  this.gridContainer.innerHTML = employeeHTML;
+ } 
   // filters employee data, then evals to "true" and 
   //passes it into the "displayEmployee" func
   filterEmployee(employees){
@@ -90,13 +92,12 @@
       filteredEmployees = filteredEmployees.filter((employee)=> 
       employee.name.first.indexOf(inputField) > -1 && employee.name.last.indexOf(inputField) > -1);
     }
-   ui.displayEmployees(filteredEmployees);
+   return ui.displayEmployees(filteredEmployees);
   }
 
   // will dispay the modal that is clicked on
-  showModal(index){
-   let employees = filteredEmployees; 
-   employees = filteredEmployees[index]; 
+  showModal(index, myEmployees){
+   employees = myEmployees[index]; 
    let name = employees.name;
    let dob = employees.dob;
    let phone = employees.phone;
@@ -130,5 +131,6 @@
     getCurrentIndex(modalCard){
       return modalCard.getAttribute('data-index');
     }
-
 }
+
+export const ui = new UI();

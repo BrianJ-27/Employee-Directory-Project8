@@ -1,4 +1,4 @@
- export default class RandomUserAPI{
+ class RandomUserAPI{
     constructor(){
       this.url = `https://randomuser.me/api/?results=12&inc=name,picture,email,location,phone,dob&noinfo&nat=US`;
     }
@@ -9,3 +9,5 @@
     return responseData;
   }
 }
+
+export const randomUser = new RandomUserAPI();
