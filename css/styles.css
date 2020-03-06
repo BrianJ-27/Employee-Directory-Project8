@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Titillium+Web&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
 /* width for colored buttons for 768px screen sizes */
 .modal-avatar {
   display: block;
@@ -7,7 +8,7 @@
 
 .modal-avatar {
   border-radius: 50%;
-  border: 2px solid #1F1E40;
+  border: 2px solid #000;
 }
 
 .leftPrev {
@@ -3432,9 +3433,9 @@ body {
 }
 
 header {
-  background: #8C855E;
+  background: #0B0940;
   padding: 1.5em;
-  border-bottom: 2px ridge #1F1E40;
+  border-bottom: 2px ridge #FFDB23;
 }
 
 main {
@@ -3478,7 +3479,7 @@ section {
   width: 100px;
   height: 100px;
   margin-left: 1em;
-  border: 2px solid #1F1E40;
+  border: 2px solid #000;
 }
 @media (min-width: 768px) {
   .avatar {
@@ -3511,15 +3512,16 @@ section {
   display: flex;
   align-items: center;
   border-radius: 5px;
-  border-top: 4px solid #8C855E;
-  border-bottom: 1px solid #1F1E40;
-  border-right: 1px solid #1F1E40;
-  border-left: 1px solid #1F1E40;
+  border-top: 4px solid #0B0940;
+  border-bottom: 1px solid #000;
+  border-right: 1px solid #000;
+  border-left: 1px solid #000;
 }
 .card:hover {
-  border-top: 4px solid #1F1E40;
+  border-top: 4px solid #FFDB23;
   transition: 0.3s ease-in-out;
-  background: #e2e0d4;
+  background: #CCCBCA;
+  color: #000;
 }
 
 .text-container {
@@ -3555,7 +3557,8 @@ section {
 }
 
 #searchBar input:focus {
-  border: 1px solid #1F1E40;
+  border: 1px solid #0B0940;
+  box-shadow: inset 1px 2px 4px rgba(209, 196, 14, 0.01), 0px 0px 8px rgba(209, 196, 14, 0.2);
 }
 
 ::placeholder {
@@ -3601,16 +3604,18 @@ section {
   right: 0px;
   top: 0px;
   cursor: pointer;
-  background: #e2e0d4;
-  color: #1F1E40;
+  background: #FFDB23;
+  color: #0B0940;
   outline: none;
 }
 
 .title {
+  font-family: "Montserrat", sans-serif;
   font-size: 1.5em;
   line-height: 1.5em;
-  text-shadow: 1px 0px 1px #CCCCCC, 0px 1px 1px #EEEEEE, 2px 1px 1px #CCCCCC, 1px 2px 1px #EEEEEE, 3px 2px 1px #CCCCCC, 2px 3px 1px #EEEEEE, 4px 3px 1px #CCCCCC, 3px 4px 1px #EEEEEE, 5px 4px 1px #CCCCCC, 4px 5px 1px #EEEEEE, 6px 5px 1px #CCCCCC, 5px 6px 1px #EEEEEE, 7px 6px 1px #CCCCCC;
+  text-shadow: #FC0 1px 0 10px;
   text-transform: uppercase;
+  color: #fff;
   text-align: center;
 }
 @media (min-width: 768px) {
@@ -3644,7 +3649,7 @@ section {
 .bday {
   font-size: 0.8em;
   margin-top: 0.5em;
-  color: #737373;
+  color: #000;
 }
 @media (min-width: 768px) {
   .email,

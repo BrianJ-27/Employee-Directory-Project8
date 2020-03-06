@@ -5,19 +5,20 @@
 //Base Site Colors
 $white: #fff;
 $mid-night-darkness: #000;
-$primary: #8C855E;
+$primary: #0B0940; 
 $secondary:#EEEEEE;
 $primary-light: lighten($primary, 40%);
 $primary-dark: darken($primary, 25%);
-$accent-color: #1F1E40;
+$accent-color: #FFDB23;
 
 //Button Colors
 $primary-complementary: complement($primary);
 
 //Font Stacks
 @import url('https://fonts.googleapis.com/css?family=Titillium+Web&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 $font-google-primary: 'Titillium Web', sans-serif;
-$font-secondary: 'Helvetica', sans-serif;
+$font-secondary: 'Montserrat', sans-serif;
 $base-font-size: 16px;
 $font-color:  #737373;
 

@@ -5,13 +5,14 @@
     @include flex_me($vertAlign: center);
     border-radius: 5px;
     border-top: 4px solid $primary;
-    border-bottom: 1px solid $accent-color;
-    border-right: 1px solid $accent-color;
-    border-left: 1px solid $accent-color;
+    border-bottom: 1px solid $mid-night-darkness;
+    border-right: 1px solid $mid-night-darkness;
+    border-left: 1px solid $mid-night-darkness;
     &:hover{
         border-top: 4px solid $accent-color;
         transition: .3s ease-in-out;
-        background: $primary-light;
+        background: #CCCBCA;
+        color: $mid-night-darkness;
     }
 }
 
@@ -41,7 +42,8 @@
     }
 }
 #searchBar input:focus{
-    border: 1px solid $accent-color;
+    border: 1px solid $primary;
+    box-shadow: inset 1px 2px 4px rgba(209, 196, 14, 0.01), 0px 0px 8px rgba(209, 196, 14, 0.2);
 }
 
 
