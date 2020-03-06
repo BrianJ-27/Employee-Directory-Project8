@@ -1,8 +1,8 @@
 // --------------------------------------------------------------------//
-//  IMPORT CLASSES FROM RANDOMUSER.JS AND UI.JS
+//  IMPORT CLASSES FROM ALL OTHER COMPONENT FILES
 // --------------------------------------------------------------------//
 
-// Our imported classes
+// Imported classes
 import { randomUser } from './randomUser.js';
 import { ui}  from './ui.js';
 
