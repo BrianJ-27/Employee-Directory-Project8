@@ -1,4 +1,14 @@
 class UI{
+
+
+ get EmployeeData(){
+   return employeeData;
+ }
+
+ set EmployeeData(employeeData){
+
+ }
+
   constructor(){
     // Stores the main element with is the main-container of all the employees
     this.gridContainer = document.querySelector(".grid-container");
@@ -14,10 +24,12 @@ class UI{
     this.rightArrow = document.getElementById("rightArrow");
     //stores the form element that holds the input field
     this.searchBar = document.getElementById("searchBar");
-    //hold employee array data
-    this.employees;
     // fires all event listeners
     this.events();
+    //hold employee array data
+    this.employeeData = [];
+    // Stores filtered employee data
+    this.filteredEmployees = [];
   }
 
   events(){
@@ -25,12 +37,13 @@ class UI{
           if(event.target !== this.gridContainer){
             const card = event.target.closest(".card");
             const index = card.getAttribute('data-index');
+            this.displayEmployees();
             ui.showModal(index);
           }
         });
     /* When a user keys in a value (letter) it filters through the employees and display 
    the employees that have the matching value in their first or last name */
-    this.searchBar.addEventListener("keyup", this.filterEmployee);
+    this.searchBar.addEventListener("keyup", () => {this.filterEmployee();});
 
      // when user clicks the close button on the modal card it closes the modal compeletly
      this.closeModal.addEventListener("click", ()=>{
@@ -43,7 +56,7 @@ class UI{
       let currentIndex = +ui.getCurrentIndex(card);
        currentIndex -=1;
        if(currentIndex < 0){
-          currentIndex = filteredEmployees.length -1;
+          currentIndex = this.filteredEmployees.length -1;
        }
        card.setAttribute('data-index', currentIndex);
        this.showModal(currentIndex);
@@ -53,7 +66,7 @@ class UI{
       let card = ui.getModalCard();
       let currentIndex = +ui.getCurrentIndex(card);
        currentIndex +=1;
-       if(currentIndex >= filteredEmployees.length){
+       if(currentIndex >= this.filteredEmployees.length){
           currentIndex = 0;
        }
        card.setAttribute('data-index', currentIndex);
@@ -62,10 +75,10 @@ class UI{
   }
 
   // display employee data to the page
-  displayEmployees(employeeData){
-    const myArray = employeeData;
+  displayEmployees(){
     let employeeHTML = " "; 
-    myArray.forEach((employee, index) =>{
+    console.log(this.filteredEmployees);
+    this.filteredEmployees.forEach((employee, index) =>{
         let name = employee.name;
         let email = employee.email;
         let city = employee.location.city;
@@ -85,25 +98,26 @@ class UI{
  } 
   // filters employee data, then evals to "true" and 
   //passes it into the "displayEmployee" func
-  filterEmployee(employees){
-    let filteredEmployees = employees.results; // holds the array employees data
+  filterEmployee(){
+    this.filteredEmployees = this.employeeData.slice();
     let inputField = document.getElementById('search-field').value.toLowerCase();
     if (inputField && inputField.length){
-      filteredEmployees = filteredEmployees.filter((employee)=> 
-      employee.name.first.indexOf(inputField) > -1 && employee.name.last.indexOf(inputField) > -1);
+      this.filteredEmployees = this.filteredEmployees.filter((employee) => 
+      employee.name.first.toLowerCase().indexOf(inputField) > -1 || employee.name.last.toLowerCase().indexOf(inputField) > -1);
     }
-   return ui.displayEmployees(filteredEmployees);
+    ui.displayEmployees();
   }
 
   // will dispay the modal that is clicked on
-  showModal(index, myEmployees){
-   employees = myEmployees[index]; 
+  showModal(index){
+   let employees = this.filteredEmployees[index]; 
    let name = employees.name;
    let dob = employees.dob;
    let phone = employees.phone;
    let email = employees.email;
    let city = employees.location.city;
-   let street = employees.location.street;
+   let streetNum = employees.location.street.number;
+   let streetName = employees.location.street.name;
    let state = employees.location.state;
    let postcode = employees.location.postcode;
    let picture = employees.picture.large;
@@ -117,7 +131,7 @@ class UI{
        <p class="address">${city}</p>
        <hr />
        <p class="phone">${phone}</p>
-       <p class="address">${street} ${state}, ${postcode}</p>
+       <p class="address">${streetNum} ${streetName} ${state}, ${postcode}</p>
        <p class= "bday">Birthday: ${date.getMonth()}/${date.getDate()}/${date.getFullYear()}</p>
      `;
      this.overlay.classList.remove("hidden"); // will reveal the overlay  

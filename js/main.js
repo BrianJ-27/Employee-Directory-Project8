@@ -1,23 +1,20 @@
-// // --------------------------------------------------------------------//
-// //  GLOBAL VARIABLES
-// // --------------------------------------------------------------------//
-
-// // Stores an empty array that will hold the filtered employee values from the API
-// let filteredEmployees = [];
-
-// //Stores an empty array that will hold the values from the API
-// let employees = [];
 // --------------------------------------------------------------------//
 //  IMPORT CLASSES FROM RANDOMUSER.JS AND UI.JS
 // --------------------------------------------------------------------//
-// Our modules / classes
+
+// Our imported classes
 import { randomUser } from './randomUser.js';
 import { ui}  from './ui.js';
 
-// Fetch data from API, then pass API array to "filter employee" function
+// 1) Fetch data from API,  
+// 2) Store it into empty array variable of "employee data"
+// 3) Then pass API array to "filter employee" function
   randomUser.getRandomUser()
-    .then(ui.filterEmployee)
-    .catch(err => console.log(err));
+    .then((response) => // step 1)
+    {
+      ui.employeeData = response.results; // step 2)
+      ui.filterEmployee(); // step 3)
+    }).catch(err => console.log(err));
 
 
 
